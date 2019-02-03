@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const app = express();
+const helmet = require("helmet");
 
 const clients = require("./routes/client.route");
 const provider = require("./routes/provider.route")
@@ -17,6 +18,7 @@ mongoose.connect(shopDb, {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(helmet());
 
 //  hendling CORS error's
 app.use((req,res,next) => {                         

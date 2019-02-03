@@ -12,14 +12,14 @@ exports.ClientsList = async(_req, res, _next) => {
 }
 
 exports.createClient = async (req, res)  => {
-    const clientToAdd  =  new Client({
+    const clientToAdd = new Client({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
         providers: req.body.providerId
     });
-    if ((!clientToAdd.name) || !clientToAdd.name.length) return res.status(STATUSCODES.BAD_REQUEST).json({message: "INVALID NAME"}).end();
+    if ((!clientToAdd.name) || !clientToAdd.name.length) return res.status(STATUSCODES.BAD_REQUEST).json({ message: "INVALID NAME" }).end();
     const [foundExistingClient] = await Client.find({ name : clientToAdd.name });
     if (foundExistingClient) res.status(STATUSCODES.OK).json(foundExistingClient);
     const newClient = await clientToAdd.save();
