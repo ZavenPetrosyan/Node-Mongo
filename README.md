@@ -1,6 +1,6 @@
 # PreezmaApp
 
-create app with Node.js and mongoDB
+# create app with Node.js and mongoDB
 
 clone repository, navigate to scripts folder and run 
 
