@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
 const providerSchema = mongoose.Schema({
-   _id: mongoose.Schema.Types.ObjectId,
-   name: String,
+   _id: {
+      type: mongoose.Schema.Types.ObjectId,
+   },
+   name: {
+      type: String
+   }
 });
 
 module.exports = mongoose.model('Provider', providerSchema);

@@ -10,11 +10,10 @@ const clientSchema = mongoose.Schema({
    },
    name: String,
    phone: Number,
-   providers: [
-       {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Provider'
-       }
-   ]
+   providers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Provider'
+   }]
 });
 
-module.exports = mongoose.model('Client',clientSchema);
+module.exports = mongoose.model('Client', clientSchema);
