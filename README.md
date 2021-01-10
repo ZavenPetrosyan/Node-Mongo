@@ -1,4 +1,4 @@
-# PreezmaApp
+# Node-Mongo
 
 # create app with Node.js and mongoDB
 
